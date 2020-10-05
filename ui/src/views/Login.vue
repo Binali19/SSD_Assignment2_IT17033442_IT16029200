@@ -11,7 +11,7 @@
                             </v-toolbar>
                             <v-form>
                             <v-card-text>
-                                <p>You can use your Google account or Facebook account to use our services</p>
+                                <p>Use your Google Account or Facebook Account to use Windys Fashion Services</p>
                             </v-card-text>
                             <v-layout align-center justify-center>
                                 <v-card-actions>

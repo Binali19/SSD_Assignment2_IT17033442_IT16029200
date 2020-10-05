@@ -14,16 +14,19 @@ let router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      //Home page
       path: '/',
       name: 'home',
       component: Home
     },
     {
+      //Login
       path: '/login',
       name: 'login',
       component: Login
     },
     {
+      //Clothing Items Uploader
       path: '/uploader',
       name: 'uploader',
       component: Uploader,

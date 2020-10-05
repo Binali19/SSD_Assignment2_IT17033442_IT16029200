@@ -35,30 +35,7 @@ export default new Vuex.Store({
 
         window.location = 'http://localhost:3000/auth/google';
 
-        //commit('auth_request')
-        // axios({url: 'http://localhost:3000/auth/google', method: 'GET', headers:{
-        //     'Access-Control-Allow-Origin' : '*',
-        //     'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-        // }})
-        // .then(resp => {
-        //   if(resp.data.status!='error'){
-        //     const token = resp.data.data.token
-        //     const user = resp.data.data.user
-        //     localStorage.setItem('token', token)
-        //     localStorage.setItem('user', JSON.stringify(user))
-        //     axios.defaults.headers.common['Authorization'] = token
-        //     commit('auth_success', token, user)
-        //     resolve(resp)
-        //   }else {
-        //     toastr.error(resp.data.message)
-        //   }
-
-        // })
-        // .catch(err => {
-        //   commit('auth_error')
-        //   localStorage.removeItem('token')
-        //   reject(err)
-        // })
+        
       })
     },
     login_f({commit}){

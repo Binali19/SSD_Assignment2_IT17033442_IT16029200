@@ -60,7 +60,7 @@ app.get('/logout', (req, res) => {
 });
 
 //Get method
-app.get('/favicon.ico', function(req, res) {
+app.get('/tshirt.png', function(req, res) {
     res.sendStatus(204);
 });
 

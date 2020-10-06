@@ -11,7 +11,7 @@
                             </v-toolbar>
                             <v-form>
                             <v-card-text>
-                                <p>Use your Google Account or Facebook Account to use Windys Fashion Services</p>
+                                <p>Use your Google Account to use Windys Fashion Services</p>
                             </v-card-text>
                             <v-layout align-center justify-center>
                                 <v-card-actions>
@@ -24,15 +24,7 @@
                                     >
                                         Signin with Google
                                     </v-btn>
-                                    <v-btn
-                                        :loading="loading_f"
-                                        :disabled="loading_f"
-                                        color="#3c57a4"
-                                        class="white--text"
-                                        @click="signin_f"
-                                    >
-                                        Signin with Facebook
-                                    </v-btn>
+                                    
                                     <v-spacer></v-spacer>
                                 </v-card-actions>
                             </v-layout>
@@ -70,11 +62,7 @@
             .then(() => this.$router.push('/'))
             .catch(err => console.log(err))
           },
-          signin_f: function () {
-             this.$store.dispatch('login_f')
-            .then(() => this.$router.push('/'))
-            .catch(err => console.log(err))
-          }
+          
         },
     }
 </script>

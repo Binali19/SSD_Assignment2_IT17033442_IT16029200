@@ -38,13 +38,6 @@ export default new Vuex.Store({
         
       })
     },
-    login_f({commit}){
-      return new Promise((resolve, reject) => {
-
-        window.location = 'http://localhost:3000/auth/facebook';
-
-      })
-    },
     logout({commit}){
       return new Promise((resolve, reject) => {
         commit('logout')

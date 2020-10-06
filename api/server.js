@@ -21,12 +21,12 @@ app.options('*', cors());
 app.use(function(req, res, next) {
   //Allow POST,GET,PUT,DELETE methods 
   res.header("Access-Control-Allow-Methods", "POST,GET,PUT,DELETE");
-  //json Content-Type
+  //JSON Content-Type
   res.header("Content-Type", "application/json");
   next();
 });
 
-// set jwt secret token
+// Set jwt secret token
 app.set('secretKey', 'nodeRestApi'); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -83,7 +83,6 @@ app.get('/auth/google/callback',
     (req, res) => {
         req.session.token = req.user.token;
 
-
         var user = {
           id:req.user.profile._json.sub,
           name:req.user.profile._json.name,
@@ -107,7 +106,6 @@ app.get('/auth/facebook/callback',
         var user = {
           id:req.user.profile._json.id,
           name:req.user.profile._json.name,
-
         }
 
         res.cookie('token',req.session.token);
@@ -122,7 +120,7 @@ function validateUser(req, res, next) {
     if (err) {
       res.json({status:"error", message: err.message, data:null});
     }else{
-      // add user id to request
+      // Add User ID to request
       req.body.userId = decoded.id;
       next();
     }
@@ -163,8 +161,8 @@ app.post('/upload', function (req, res) {
 
       driveResponse.then(data => {
 
-        if (data.status == 200) res.redirect('http://localhost:8080/uploader?file=uploaded') // if success
-        else res.redirect('http://localhost:8080/uploader?file=notuploaded') // if unsuccess
+        if (data.status == 200) res.redirect('http://localhost:8080/uploader?file=uploaded') // If success
+        else res.redirect('http://localhost:8080/uploader?file=notuploaded') // If unsuccess
 
       }).catch(err => { throw new Error(err) })
   } catch (error) {
@@ -187,8 +185,9 @@ app.use(function(err, req, res, next) {
   if(err.status === 404)
    res.status(404).json({message: "Not found"});
   else
-    res.status(500).json({message: "Something went wrong !!!"});
+    res.status(500).json({message: "Error !!! Something went wrong !"});
 });
+
 app.listen(3000, function(){
  console.log('Server listening on port 3000');
 });

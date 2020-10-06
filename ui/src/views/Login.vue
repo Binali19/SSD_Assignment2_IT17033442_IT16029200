@@ -22,7 +22,7 @@
                                         class="white--text"
                                         @click="signin_g"
                                     >
-                                        Signin with Google
+                                        Sign in with Google
                                     </v-btn>
                                     
                                     <v-spacer></v-spacer>

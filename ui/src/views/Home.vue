@@ -21,7 +21,7 @@
                     <template v-slot:placeholder>
                       <v-layout
                         fill-height
-				   fill-width
+				                fill-width
                         align-center
                         justify-center
                         ma-0

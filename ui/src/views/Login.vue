@@ -42,8 +42,8 @@
     export default {
         data () {
             return {
-                loading_g: false,
-                loading_f: false
+                loading_g: false
+               
             }
         },
         watch: {

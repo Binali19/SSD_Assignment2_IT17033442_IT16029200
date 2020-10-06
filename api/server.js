@@ -166,8 +166,7 @@ app.post('/upload', function (req, res) {
 
       }).catch(err => { throw new Error(err) })
   } catch (error) {
-    console.log(error);
-    
+    console.log(error);  
   }  
 })
 
@@ -191,3 +190,5 @@ app.use(function(err, req, res, next) {
 app.listen(3000, function(){
  console.log('Server listening on port 3000');
 });
+
+

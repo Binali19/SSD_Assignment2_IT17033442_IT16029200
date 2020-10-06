@@ -11,7 +11,6 @@ var jwt = require('jsonwebtoken');
 const app = express();
 
 gauth(passport);
-fauth(passport);
 app.use(passport.initialize());
 
 app.use(cors());

@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const gauth = require('./g-auth');
-const fauth = require('./f-auth');
 const { google } = require('googleapis')
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
@@ -75,9 +74,6 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 //Get method
-app.get('/auth/facebook', passport.authenticate('facebook'));
-
-//Get method
 app.get('/auth/google/callback',
     passport.authenticate('google', {failureRedirect:'/'}),
     (req, res) => {
@@ -96,23 +92,6 @@ app.get('/auth/google/callback',
     }
 );
 
-//Get method
-app.get('/auth/facebook/callback',
-    passport.authenticate('facebook', {failureRedirect:'/'}),
-    (req, res) => {
-        req.session.token = req.user.token;
-        console.log(req.user)
-
-        var user = {
-          id:req.user.profile._json.id,
-          name:req.user.profile._json.name,
-        }
-
-        res.cookie('token',req.session.token);
-        res.cookie('user',user);
-        res.redirect('http://localhost:8080/');
-    }
-);
 
 //Validate user with secret key
 function validateUser(req, res, next) {
